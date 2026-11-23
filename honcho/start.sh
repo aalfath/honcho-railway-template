@@ -21,5 +21,4 @@ if [ "${AUTH_USE_AUTH}" = "true" ] && [ "${HONCHO_PRINT_ADMIN_KEY:-true}" = "tru
   unset KEY
 fi
 
-echo "Starting Honcho API on port ${PORT:-8000}..."
-exec /app/.venv/bin/fastapi run --host "${HOST:-::}" --port "${PORT:-8000}" --workers "${API_WORKERS}" src/main.py
+exec /app/.venv/bin/python /app/railway/serve.py
